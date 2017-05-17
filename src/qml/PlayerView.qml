@@ -389,6 +389,9 @@ Item {
                 if (sourcesBox.open){
                     sourcesBox.close()
                 }
+                if (smallMode) {
+                    requestSelectionChange(5)
+                }   
             }
 
             onDoubleClicked: {
@@ -738,7 +741,7 @@ Item {
                         delay: 666
                         text: "Toggle fullscreen"
                     }
-                }   
+                }
             }
 
             StreamSelectorComboBox {
