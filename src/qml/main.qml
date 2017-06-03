@@ -31,6 +31,9 @@ ApplicationWindow {
     property variant g_toolBox: sidebar
     property bool g_contextMenuVisible: false
     property bool g_fullscreen: false
+
+    property bool _applicationWindowMoved: false
+
     onG_fullscreenChanged: {
         if (g_fullscreen)
             windowstate = visibility
@@ -44,6 +47,20 @@ ApplicationWindow {
 
     function fitToAspectRatio() {
         height = view.width * 0.5625
+    }
+
+    onG_contextMenuVisibleChanged: {
+        if (g_contextMenuVisible) {
+            popupScreenDisplayFix();
+        }
+    }
+
+    function popupScreenDisplayFix() {
+        if (!_applicationWindowMoved) {
+            root.x += 1;
+            root.x -= 1;
+            _applicationWindowMoved = true;
+        }
     }
 
     onClosing: {
