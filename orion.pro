@@ -73,7 +73,7 @@ mpv {
 
     unix:!macx: LIBS += -lmpv
     win32: LIBS += -L$$PWD/libs -lmpv
-    macx: LIBS += -L$$PWD/../../../../usr/local/Cellar/mpv/0.17.0/lib -lmpv
+    macx: LIBS += -L$$PWD/../../../../usr/local/Cellar/mpv/0.25.0/lib -lmpv
 }
 
 qtav {
@@ -171,6 +171,7 @@ macx: {
 
     INCLUDEPATH += /System/Library/Frameworks/Foundation.framework/Versions/C/Headers
     INCLUDEPATH += /System/Library/Frameworks/AppKit.framework/Versions/C/Headers
+    INCLUDEPATH += /usr/local/include
 }
 
 OBJECTIVE_SOURCES += \
