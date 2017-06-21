@@ -60,7 +60,9 @@ make && sudo make install
 
 ```
 brew install qt mpv
+brew link --force qt
 ```
+You need to force link qt to get qmake. Note that this can cause problems with other make tools. For more information see `brew info qt`.
 
 #### Get orion from github and install
 
