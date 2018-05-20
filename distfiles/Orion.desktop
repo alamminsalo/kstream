@@ -1,10 +1,11 @@
 [Desktop Entry]
-Version=1.0
+Version=1.1
 Type=Application
 Name=Orion
 Icon=orion
-Exec=/usr/bin/orion
-Comment=Seek and watch streams on Twitch
-Categories=Game
+Exec=orion
+Comment=A Twitch.tv desktop client
+Categories=AudioVideo;Video;TV;Network;Chat;Qt;
+Keywords=chat;watch;live;livestream;livestreams;streams;stream;
 Terminal=false
 StartupWMClass=orion
