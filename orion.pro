@@ -129,13 +129,16 @@ linux:!android: {
     target.path = /usr/bin
     INSTALLS += target
 
+    _appdata.files = distfiles/Orion.appdata.xml
+    _appdata.path = /usr/local/share/metainfo
+
     _desktop.files = distfiles/Orion.desktop
     _desktop.path = /usr/local/share/applications
 
     _icon.files = distfiles/orion.svg
     _icon.path = /usr/local/share/icons
 
-    INSTALLS += _desktop _icon
+    INSTALLS += _appdata _desktop _icon
 }
 
 RESOURCES += \

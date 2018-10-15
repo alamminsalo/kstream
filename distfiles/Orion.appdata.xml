@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>Orion.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0</project_license>
+  <name>Orion</name>
+  <summary>A desktop client for Twitch.tv</summary>
+  <description>
+    <p>
+      Cross-platform Twitch client. Features:
+    </p>
+    <ul>
+        <li>Channel browsing</li>
+        <li>Integrated player</li>
+        <li>Login via Twitch account</li>
+        <li>Chat</li>
+        <li>Streamable videos</li>
+        <li>Desktop notifications</li>
+    </ul>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://user-images.githubusercontent.com/5585454/27839943-cc1834ae-60fd-11e7-9b87-d3aaf5f7483c.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://user-images.githubusercontent.com/5585454/27839974-fb7a6d3e-60fd-11e7-8638-9214fe5a1355.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://user-images.githubusercontent.com/5585454/27840063-b6429fce-60fe-11e7-9e96-54d6d0657953.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://user-images.githubusercontent.com/5585454/27840062-b2f14eba-60fe-11e7-9e04-7d12477519d7.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://alamminsalo.github.io/orion/</url>
+  <url type="bugtracker">https://github.com/alamminsalo/orion/issues</url>
+  <update_contact>eclipseo_at_fedoraproject.org</update_contact>
+</component>
