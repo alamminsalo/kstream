@@ -13,6 +13,10 @@ CONFIG += c++11
 
 TARGET = orion
 
+isEmpty(PREFIX){
+    PREFIX = /usr
+}
+
 VERSION = 1.6.6
 DEFINES += APP_VERSION=\\\"v$$VERSION\\\"
 DEFINES += APP_NAME=\\\"Orion\\\"
@@ -126,17 +130,17 @@ linux:!android: {
     HEADERS += src/notification/notificationsender.h
     SOURCES +=  src/notification/notificationsender.cpp
 
-    target.path = /usr/bin
+    target.path = $$PREFIX/bin
     INSTALLS += target
 
     _appdata.files = distfiles/Orion.appdata.xml
-    _appdata.path = /usr/local/share/metainfo
+    _appdata.path = $$PREFIX/share/metainfo
 
     _desktop.files = distfiles/Orion.desktop
-    _desktop.path = /usr/local/share/applications
+    _desktop.path = $$PREFIX/share/applications
 
     _icon.files = distfiles/orion.svg
-    _icon.path = /usr/local/share/icons
+    _icon.path = $$PREFIX/share/icons/hicolor/scalable/apps
 
     INSTALLS += _appdata _desktop _icon
 }
