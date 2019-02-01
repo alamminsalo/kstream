@@ -161,7 +161,9 @@ int main(int argc, char *argv[])
     //Override QT_QUICK_CONTROLS_STYLE environment variable
     qputenv("QT_QUICK_CONTROLS_STYLE", "material");
 
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    if (!qEnvironmentVariableIsEmpty("QT_AUTO_SCREEN_SCALE_FACTOR")) {
+        QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    }
 
     auto opengl = SettingsManager::getInstance()->opengl().toLower();
 
