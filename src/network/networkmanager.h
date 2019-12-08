@@ -109,6 +109,7 @@ public:
 
     //TODO: move to new class if more operations need to be added
     Q_INVOKABLE QString getClientId() const { return QString(CLIENT_ID); }
+    Q_INVOKABLE QString getPrivateClientId() const { return QString(CLIENT_ID_PRIVATE); }
     Q_INVOKABLE bool networkAccess();
 
 signals:

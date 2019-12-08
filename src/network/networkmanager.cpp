@@ -304,7 +304,7 @@ void NetworkManager::getChannelPlaybackStream(const QString &channelName)
             + QString("/channels/%1").arg(channelName)
             + QString("/access_token");
     QNetworkRequest request;
-    request.setRawHeader("Client-ID", getClientId().toUtf8());
+    request.setRawHeader("Client-ID", getPrivateClientId().toUtf8());
     request.setUrl(QUrl(url));
 
     request.setAttribute(QNetworkRequest::User, LIVE);
@@ -343,7 +343,7 @@ void NetworkManager::getBroadcastPlaybackStream(const QString &vod)
             + QString("/vods/%1").arg(vod)
             + QString("/access_token");
     QNetworkRequest request;
-    request.setRawHeader("Client-ID", getClientId().toUtf8());
+    request.setRawHeader("Client-ID", getPrivateClientId().toUtf8());
     request.setUrl(QUrl(url));
 
     request.setAttribute(QNetworkRequest::User, VOD);
