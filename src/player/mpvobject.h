@@ -21,7 +21,7 @@ typedef mpv_opengl_cb_context mpv_context;
 typedef mpv_render_context mpv_context;
 #endif
 
-#include <mpv/qthelper.hpp>
+#include "qthelper.hpp"
 
 class MpvRenderer;
 
