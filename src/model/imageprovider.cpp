@@ -26,7 +26,8 @@
 const int ImageProvider::MSEC_PER_DOWNLOAD = 16; // ~ 256kbit/sec for 2k images
 
 ImageProvider::ImageProvider(const QString imageProviderName, const QString extension, const QString cacheDirName) : QObject(),
-    _cacheProvider(this), _imageProviderName(imageProviderName), _extension(extension) {
+    _imageProviderName(imageProviderName), _extension(extension) {
+    _cacheProvider = new CachedImageProvider(this);
 
     activeDownloadCount = 0;
 
@@ -158,7 +159,7 @@ void ImageProvider::loadImageFile(QString emoteKey, QString filename) {
 }
 
 QQmlImageProviderBase * ImageProvider::getQMLImageProvider() {
-    return &_cacheProvider;
+    return _cacheProvider;
 }
 
 bool ImageProvider::downloadsInProgress() const {

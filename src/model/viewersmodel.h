@@ -16,11 +16,7 @@ class ViewersModel : public QObject
     explicit ViewersModel(QObject *parent = nullptr);
 
 public:
-    static ViewersModel *getInstance() {
-        if (!instance)
-            instance = new ViewersModel();
-        return instance;
-    }
+    static ViewersModel *getInstance();
 
 signals:
     void chatterListLoaded(QVariantMap chatters);

@@ -31,8 +31,6 @@
 #include <QtAndroidExtras>
 #endif
 
-Power *Power::instance = 0;
-
 Power::Power() :
     cookie(0)
 {
@@ -41,8 +39,7 @@ Power::Power() :
 
 Power *Power::getInstance()
 {
-    if (!instance)
-        instance = new Power();
+    static Power *instance = new Power();
     return instance;
 }
 

@@ -1,10 +1,13 @@
 #include "viewersmodel.h"
 
-ViewersModel *ViewersModel::instance = 0;
-
 ViewersModel::ViewersModel(QObject *parent) : QObject(parent), netman(NetworkManager::getInstance())
 {
     connect(netman, &NetworkManager::chatterListLoadOperationFinished, this, &ViewersModel::processChatterList);
+}
+
+ViewersModel *ViewersModel::getInstance() {
+    static ViewersModel *instance = new ViewersModel();
+    return instance;
 }
 
 void ViewersModel::processChatterList(QMap<QString, QList<QString>> chatters)

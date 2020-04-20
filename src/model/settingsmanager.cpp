@@ -12,8 +12,8 @@ SettingsManager::SettingsManager(QObject *parent) :
 
 SettingsManager *SettingsManager::getInstance()
 {
-    static SettingsManager instance;
-    return &instance;
+    static SettingsManager *instance = new SettingsManager();
+    return instance;
 }
 
 void SettingsManager::load()

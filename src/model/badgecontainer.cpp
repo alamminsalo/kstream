@@ -1,14 +1,6 @@
 #include "badgecontainer.h"
 #include "settingsmanager.h"
 
-BadgeContainer *BadgeContainer::instance = 0;
-BadgeContainer *BadgeContainer::getInstance()
-{
-    if (!instance)
-        instance = new BadgeContainer();
-    return instance;
-}
-
 BadgeContainer::BadgeContainer() : netman(NetworkManager::getInstance())
 {
     connect(netman, &NetworkManager::getEmoteSetsOperationFinished, this, &BadgeContainer::onEmoteSetsUpdated);
@@ -21,6 +13,12 @@ BadgeContainer::BadgeContainer() : netman(NetworkManager::getInstance())
 
     connect(netman, &NetworkManager::getGlobalBttvEmotesOperationFinished, this, &BadgeContainer::innerGlobalBttvEmotesLoaded);
     connect(netman, &NetworkManager::getChannelBttvEmotesOperationFinished, this, &BadgeContainer::innerChannelBttvEmotesLoaded);
+}
+
+BadgeContainer *BadgeContainer::getInstance()
+{
+    static BadgeContainer *instance = new BadgeContainer();
+    return instance;
 }
 
 bool BadgeContainer::getChannelBadgeUrl(const QString channelId, const QString badgeName, const QString imageFormat, QString &outUrl) const {

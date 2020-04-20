@@ -100,7 +100,7 @@ private:
     QNetworkAccessManager _manager;
 
     friend class CachedImageProvider;
-    CachedImageProvider _cacheProvider;
+    CachedImageProvider *_cacheProvider;
 
     QHash<QString, QImage> _imageTable;
     QString _imageProviderName;

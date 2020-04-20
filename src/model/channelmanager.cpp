@@ -15,8 +15,6 @@
 #include "channelmanager.h"
 #include <QCoreApplication>
 
-ChannelManager *ChannelManager::instance = 0;
-
 ChannelManager::ChannelManager() :
     netman(NetworkManager::getInstance()),
     settingsManager(SettingsManager::getInstance())
@@ -63,8 +61,7 @@ ChannelManager::ChannelManager() :
 }
 
 ChannelManager *ChannelManager::getInstance() {
-    if (!instance)
-        instance = new ChannelManager();
+    static ChannelManager *instance = new ChannelManager();
     return instance;
 }
 

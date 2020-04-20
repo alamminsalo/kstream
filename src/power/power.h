@@ -14,7 +14,6 @@ class Power: public QObject
 
     Q_PROPERTY(bool screensaver WRITE setScreensaver)
 
-    static Power *instance;
     Power();
 
 public:

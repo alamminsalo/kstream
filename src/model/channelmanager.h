@@ -56,7 +56,6 @@ class ChannelManager: public QObject
     ChannelListModel *createFollowedChannelsModel();
     bool isAccessTokenAvailable() { return settingsManager->hasAccessToken(); }
 
-    static ChannelManager *instance;
     ChannelManager();
 
 public:

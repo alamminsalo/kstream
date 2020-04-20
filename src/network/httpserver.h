@@ -19,8 +19,6 @@ class HttpServer: public QObject
     bool listenError = false;
     QString m_port;
 
-    static HttpServer *instance;
-
     explicit HttpServer(QObject *parent = 0);
 public:
     static HttpServer *getInstance();

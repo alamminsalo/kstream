@@ -1,15 +1,12 @@
 #include "httpserver.h"
 
-HttpServer *HttpServer::instance = 0;
-
 HttpServer::HttpServer(QObject *parent): QObject(parent)
 {
 
 }
 
 HttpServer *HttpServer::getInstance() {
-    if (!instance)
-        instance = new HttpServer();
+    static HttpServer *instance = new HttpServer();
     return instance;
 }
 
